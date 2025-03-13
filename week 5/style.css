@@ -1,0 +1,54 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    background-color: rgb(205, 50, 195);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 40px;
+}
+header h1{
+   text-align: center;
+}
+article header p{ font-style: italic;}
+main{padding-left: 20px;}
+
+.my-list img {
+    width: 150px; 
+    height: 200px; 
+    border-image-source: 50%;
+    display: block;
+
+}
+main article {
+    background:rgb(205, 50, 195) ;
+    margin: 10px;
+    padding: 5px;
+                    
+}
+nav a {
+   
+    color: #000000;
+}
+
+
+.Profile{display: flex;justify-content: flex-end;}
+table { 
+    color: rgb(13, 12, 12);
+    background-color: rgb(253, 253, 253);
+}
+article img { 
+    width: 150px;
+    height: 150px;
+    margin: 0px;
+}
