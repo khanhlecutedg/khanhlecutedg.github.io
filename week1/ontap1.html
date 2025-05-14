@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bảng xếp hạng người chơi</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h2 { margin-bottom: 10px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    .top1 { background-color: gold; }
+    .top2 { background-color: silver; }
+    .top3 { background-color: #cd7f32; }
+    button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Bảng xếp hạng người chơi</h2>
+  <button onclick="toggleSort()">Sắp xếp theo điểm: <span id="sortDirection">Giảm dần</span></button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Xếp hạng</th>
+        <th>Tên người chơi</th>
+        <th>Điểm số</th>
+      </tr>
+    </thead>
+    <tbody id="leaderboard"></tbody>
+  </table>
+
+  <script>
+    let players = [
+      { name: "An", score: 95 },
+      { name: "Bình", score: 80 },
+      { name: "Châu", score: 70 },
+      { name: "Dũng", score: 60 },
+      { name: "Hà", score: 85 },
+      { name: "Khánh", score: 78 },
+      { name: "Lan", score: 88 },
+      { name: "Minh", score: 92 },
+      { name: "Ngọc", score: 76 },
+      { name: "Quang", score: 65 }
+    ];
+
+    let descending = true;
+
+    function renderLeaderboard() {
+      const tbody = document.getElementById("leaderboard");
+      tbody.innerHTML = "";
+
+      // Sắp xếp theo thứ tự tăng hoặc giảm
+      const sortedPlayers = [...players].sort((a, b) => descending ? b.score - a.score : a.score - b.score);
+
+      sortedPlayers.forEach((player, index) => {
+        const tr = document.createElement("tr");
+        if (index === 0) tr.className = "top1";
+        else if (index === 1) tr.className = "top2";
+        else if (index === 2) tr.className = "top3";
+
+        tr.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${player.name} &copy; &trade;</td>
+          <td>${player.score}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function toggleSort() {
+      descending = !descending;
+      document.getElementById("sortDirection").textContent = descending ? "Giảm dần" : "Tăng dần";
+      renderLeaderboard();
+    }
+
+    renderLeaderboard();
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Dropdown Menu</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .menu { background: #333; overflow: hidden; }
+    .menu a {
+      float: left;
+      display: block;
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .menu a:hover { background-color: #555; }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      z-index: 1;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    .dropdown-content a:hover { background-color: #ddd; }
+
+    .dropdown:hover .dropdown-content { display: block; }
+
+    #toggleMenu {
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu" id="mainMenu">
+    <div class="dropdown">
+      <a href="#">Mục 1</a>
+      <div class="dropdown-content">
+        <a href="#">Mục 1.1</a>
+        <a href="#">Mục 1.2</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Mục 2</a>
+      <div class="dropdown-content">
+        <a href="#">Mục 2.1</a>
+        <a href="#">Mục 2.2</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Mục 3</a>
+      <div class="dropdown-content">
+        <a href="#">Mục 3.1</a>
+        <a href="#">Mục 3.2</a>
+      </div>
+    </div>
+  </div>
+  <button id="toggleMenu">Ẩn/Hiện Menu</button>
+
+  <script>
+    const btn = document.getElementById("toggleMenu");
+    const menu = document.getElementById("mainMenu");
+    btn.addEventListener("click", () => {
+      menu.style.display = (menu.style.display === "none") ? "block" : "none";
+    });
+  </script>
+</body>
+</html>

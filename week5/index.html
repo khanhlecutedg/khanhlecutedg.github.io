@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Du lịch khám phá</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: #008cba; color: white; padding: 20px 0; text-align: center; }
+        nav { background: #333; text-align: center; padding: 10px; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        main { padding: 20px; }
+        footer { background: #222; color: #ccc; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; }
+        .destination { display: flex; flex-wrap: wrap; gap: 20px; }
+        .card { background: white; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: calc(33% - 20px); }
+        .card img { width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Khám phá điểm đến tuyệt vời</h1>
+    </header>
+    <nav>
+        <a href="index.html">Trang chủ</a>
+        <a href="about.html">Giới thiệu</a>
+        <a href="destinations.html">Điểm đến</a>
+        <a href="activities.html">Hoạt động</a>
+        <a href="hotels.html">Khách sạn</a>
+        <a href="restaurants.html">Nhà hàng</a>
+        <a href="contact.html">Liên hệ</a>
+    </nav>
+    <main>
+        <h2>Điểm đến nổi bật</h2>
+        <div class="destination">
+            <div class="card">
+                <img src="images/halong.jpg" alt="Vịnh Hạ Long">
+                <h3>Vịnh Hạ Long</h3>
+                <p>Di sản thiên nhiên thế giới với hàng ngàn đảo đá vôi kỳ vĩ.</p>
+            </div>
+            <div class="card">
+                <img src="images/hoian.jpg" alt="Phố cổ Hội An">
+                <h3>Hội An</h3>
+                <p>Phố cổ với đèn lồng rực rỡ và văn hóa truyền thống.</p>
+            </div>
+            <div class="card">
+                <img src="images/sapa.jpg" alt="Sa Pa">
+                <h3>Sa Pa</h3>
+                <p>Thị trấn trong sương với ruộng bậc thang và bản làng dân tộc.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 Du lịch Việt Nam | Thiết kế bởi Nhóm của bạn
+    </footer>
+</body>
+</html>
